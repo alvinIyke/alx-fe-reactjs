@@ -1,6 +1,7 @@
 import WelcomeMessage from './WelcomeMessage'
 import Header from './Header';
 import MainContent from './MainContent';
+import Counter from './components/Counter';
 import Footer from './Footer';
 import UserProfile from './components/UserProfile';
 import { useState } from 'react';
@@ -37,6 +38,7 @@ function App() {
       <Header />
       <MainContent />
       <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
+      <Counter />
       <Footer />
     </>
   )
