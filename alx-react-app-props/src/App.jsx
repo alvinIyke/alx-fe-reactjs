@@ -8,7 +8,7 @@ function App() {
   const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
 
   return (
-    <UserContext.Provider = {...userData}>
+    <UserContext.Provider {...userData}>
      <ProfilePage />
     </UserContext.Provider>
   );
