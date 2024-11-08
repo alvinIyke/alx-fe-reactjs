@@ -5,10 +5,10 @@ import viteLogo from '/vite.svg';
 import './App.css';
 
   const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
-  
+
   function App() {
   return (
-    <UserContext.Provider {...userData}>
+    <UserContext.Provider value = {{...userData}}>
      <ProfilePage />
     </UserContext.Provider>
   );
