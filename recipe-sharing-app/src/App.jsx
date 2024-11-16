@@ -3,6 +3,11 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import RecipeList from './components/RecipeList'; // Correct import
 import AddRecipeForm from './components/AddRecipeForm'; // Correct import
 import RecipeDetails from './components/RecipeDetails';
+import FavoritesList from './components/FavoritesList';
+import RecommendationsList from './components/RecommendationsList';
+import SearchBar from './components/SearchBar';
+import DeleteRecipeButton from './components/DeleteRecipeButton';
+import EditRecipeForm from './components/EditRecipeForm';
 
 function   App() {
   return (
@@ -10,7 +15,14 @@ function   App() {
       <div>
         <h1>Recipe Sharing App</h1>
         <AddRecipeForm />
+        <EditRecipeForm />
+        <DeleteRecipeButton />
         <RecipeList />
+        <FavoritesList />
+        <SearchBar />
+        <RecipeDetails />
+        <RecommendationsList />
+
       </div>
 
       {/* Define Routes */}
