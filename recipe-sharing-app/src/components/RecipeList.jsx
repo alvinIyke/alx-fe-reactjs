@@ -4,6 +4,7 @@
     const recipes = useRecipeStore(state => state.recipes);
 
     return (
+      <>
       <div>
         {recipes.map(recipe => (
           <div key={recipe.id}>
@@ -12,6 +13,7 @@
           </div>
         ))}
       </div>
+      </>
     );
   };
 

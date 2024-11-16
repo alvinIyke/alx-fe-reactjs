@@ -15,6 +15,7 @@
     };
 
     return (
+      <>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -29,8 +30,8 @@
         />
         <button type="submit">Add Recipe</button>
       </form>
+      </>
     );
   };
-
-  export default AddRecipeForm;
+export default AddRecipeForm;
 
