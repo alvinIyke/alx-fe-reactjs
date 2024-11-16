@@ -31,7 +31,7 @@
         <button type="submit">Add Recipe</button>
       </form>
       </>
-    );
+    )
   };
 export default AddRecipeForm;
 
