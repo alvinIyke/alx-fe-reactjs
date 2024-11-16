@@ -22,4 +22,13 @@ export const useRecipeStore = create((set) => ({
         recipe.id === updatedRecipe.id ? updatedRecipe : recipe
       ),
     })),
+ // search and filtering results
+  searchTerm: '',
+    setSearchTerm: (term) => set({ searchTerm: term }),
+     filteredRecipes: [],
+     filterRecipes: () => set(state => ({
+     filteredRecipes: state.recipes.filter(recipe =>
+     recipe.title.toLowerCase().includes(state.searchTerm.toLowerCase())
+   )   
+ })),
 }));
