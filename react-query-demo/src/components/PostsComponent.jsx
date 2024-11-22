@@ -27,14 +27,14 @@ const PostsComponent = () => {
     <div>
       <h1>Posts</h1>
       <ul>
-      {data.map((post) => (
-        <li key={( https://jsonplaceholder.typicode.com/posts)}>
+       {data.map ((post) => (
+        <li key={('https://jsonplaceholder.typicode.com/posts')}>
           <h2>{post.title}</h2>
           <p>{post.body}</p>
         </li>
       ))}
-    </ul>
-  </div>
+      </ul>
+    </div>
 );
 };
 
