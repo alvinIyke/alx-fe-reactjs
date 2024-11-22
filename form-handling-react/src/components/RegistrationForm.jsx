@@ -4,7 +4,7 @@ const RegistrationForm = () => {
   const [username, setUsername] = useState('');   //state management for the fields
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+ 
   const [errors, setErrors] = useState({});
 
   // Validation Logic to check each field with error handling and display using error state.
@@ -23,11 +23,7 @@ const RegistrationForm = () => {
     } else if (password.length < 8) {
       newErrors.password = 'Password must be at least 8 characters';
     }
-    if (!confirmPassword.trim()) {
-      newErrors.confirmPassword = 'Confirm password is required';
-    } else if (confirmPassword !== password) {
-      newErrors.confirmPassword = 'Passwords do not match';
-    }
+    
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
