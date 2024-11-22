@@ -9,15 +9,15 @@ const RegistrationForm = () => {
   // Validation Logic to check each field with error handling and display using error state.
   const validateForm = () => {
     const newErrors = {};
-    if (!username.trim()) {
+    if (!username.trim() === '') {
       newErrors.username = 'Username is required';
     }
-    if (!email.trim()) {
+    if (!email.trim() === '') {
       newErrors.email = 'Email is required';
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
       newErrors.email = 'Invalid email address';
     }
-    if (!password.trim()) {
+    if (!password.trim() === '') {
       newErrors.password = 'Password is required';
     } else if (password.length < 8) {
       newErrors.password = 'Password must be at least 8 characters';
