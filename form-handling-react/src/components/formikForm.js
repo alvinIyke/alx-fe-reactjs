@@ -37,7 +37,7 @@ const FormikForm = () => (
                 <ErrorMessage name="email" component="div" />
                 <Field type="password" name="password" />
                 <ErrorMessage name="password" component="div" />
-                <button type="submit">Submit</button>
+                <button type="submit">Click here to Register</button>
             </Form>
         )}
     </Formik>
