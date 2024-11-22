@@ -65,15 +65,6 @@ const RegistrationForm = () => {
         />
         {errors.password && <div style={{ color: 'red' }}>{errors.password}</div>}
       </div>
-      <div>
-        <label>Confirm Password:</label>
-        <input
-          type="password"
-          value={confirmPassword}
-          onChange={(event) => setConfirmPassword(event.target.value)}
-        />
-        {errors.confirmPassword && <div style={{ color: 'red' }}>{errors.confirmPassword}</div>}
-      </div>
       <button type="submit">Click here to Register</button>
     </form>
   );
