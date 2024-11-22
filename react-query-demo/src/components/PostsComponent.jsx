@@ -15,6 +15,13 @@ const PostsComponent = () => {
     fetchPosts // function to fetch data
   );
 
+  const queryClient = useQueryClient();
+
+  const handleRefetch = async () => {
+    await queryClient.refetchQueries('posts');
+  };
+
+
   if (isLoading) {
     return <span>Loading...</span>;
   }
