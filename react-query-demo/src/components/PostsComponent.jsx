@@ -48,6 +48,7 @@ const PostsComponent = () => {
         </li>
       ))}
       </ul>
+      <button onClick={handleRefetch}>Refetch Posts</button>
     </div>
 );
 };
