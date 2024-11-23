@@ -18,7 +18,7 @@ function App() {
           <Route path="details" element={<ProfileDetails />} />
           <Route path="settings" element={<ProfileSettings />} />
           <Route path="/users/:username" element={<UserProfile />} />
-          <Route path="/blog/:postId" element={<BlogPost />} />
+          <Route path="/blog/:Id" element={<BlogPost />} />
 
         </Route>
       </Routes>
