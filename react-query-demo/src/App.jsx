@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-       <QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={queryClient}>
         <PostsComponent />
       </QueryClientProvider>
     </>
