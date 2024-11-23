@@ -3,12 +3,12 @@ import { BrowserRouter, Routes, Route, Link, useParams } from 'react-router-dom'
 
 // Blog post component with dynamic routing
 const BlogPost = () => {
-    const { postId } = useParams();
+    const { Id } = useParams();
   
     return (
       <div>
-        <h1>Blog Post: {postId}</h1>
-        <p>This is the blog post page for post {postId}.</p>
+        <h1>Blog Post: {Id}</h1>
+        <p>This is the blog post page for post {Id}.</p>
       </div>
     );
   };
