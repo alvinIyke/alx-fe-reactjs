@@ -18,6 +18,7 @@ const PostsComponent = () => {
       refetchOnWindowFocus: true, // Refetch data when the window regains focus
       staleTime: 60000, // Refetch data every 60 seconds when the window is focused
       keepPreviousData: true, // Keep previous data in cache while refetching new data
+      cacheTime: 300000, // cached data is stored in memory for 5 minutes
     }
   );
   
