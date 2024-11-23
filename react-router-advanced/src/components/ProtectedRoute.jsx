@@ -1,7 +1,17 @@
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+import React from 'react';
+import { Navigate, useLocation } from 'react-router-dom';
+import { useAuth } from './AuthContext';
 
-// Function that checks if the user is authenticated
-const isAuthenticated = () => {
-    // Replace with your authentication logic, for instance checking if a token exists in local storage
-    return localStorage.getItem('authToken') !== null;
+// Protected route component
+const ProtectedRoute = ({ Profile }) => {
+  const { isAuthenticated } = useAuth();
+  const location = useLocation();
+
+  if (!isAuthenticated) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
+
+  return Profile;
 };
+
+export default ProtectedRoute;
