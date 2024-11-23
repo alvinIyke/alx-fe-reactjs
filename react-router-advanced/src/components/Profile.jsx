@@ -1,7 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, Link, Outlet } from 'react-router-dom';
 
-
 const Profile = () => {
     return (
       <div>
