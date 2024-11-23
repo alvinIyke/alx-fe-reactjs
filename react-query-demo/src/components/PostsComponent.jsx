@@ -10,10 +10,8 @@ const fetchPosts = async () => {
 };
 
 const PostsComponent = () => {
-  const { data, error, isLoading, isError } = useQuery(
-    'posts', // key
-    fetchPosts // function to fetch data
-  );
+  // Use the useQuery hook to handle data fetching and caching
+  const { data, error, isLoading, isError } = useQuery('posts', fetchPosts );
 
   const queryClient = useQueryClient();
 
@@ -21,15 +19,15 @@ const PostsComponent = () => {
     await queryClient.refetchQueries('posts');
   };
 
-
+  // Handling loading state
   if (isLoading) {
     return <span>Loading...</span>;
   }
-
+  // Handling Error state
   if (isError) {
     return <span>Error: {error.message}</span>;
   }
-
+  // Render the fetched data
   return (
     <div>
       <h1>Posts</h1>
