@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import TodoList from '../components/TodoList';
-import TodoForm from '../components/AddTodoForm';
+import TodoList from './TodoList';
+import TodoForm from './AddTodoForm';
 
 
 describe('TodoList component', () => {
