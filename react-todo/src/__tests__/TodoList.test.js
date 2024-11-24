@@ -5,7 +5,7 @@ import TodoForm from '../components/AddTodoForm';
 
 
 describe('TodoList component', () => {
-  it('renders the todo list', () => {            // Initial rendering of the TodoList component
+  test('renders the todo list', () => {            // Initial rendering of the TodoList component
     const { getByText } = render(<TodoList />);
     expect(getByText('Buy milk')).toBeInTheDocument();
     expect(getByText('Walk the dog')).toBeInTheDocument();
@@ -13,7 +13,7 @@ describe('TodoList component', () => {
   });
 
  
-  it('toggles the todo completed state', () => {
+  test('toggles the todo completed state', () => {
     const { getByLabelText } = render(<TodoList />);
     const checkbox = getByLabelText('Buy milk');
     fireEvent.click(checkbox);
@@ -21,7 +21,7 @@ describe('TodoList component', () => {
   });
 
   // Test for adding a todo item
-  it('adds a new todo item', () => {
+  test('adds a new todo item', () => {
     const { getByPlaceholderText, getByText } = render(<TodoList />);
     const input = getByPlaceholderText('Enter a new todo');
     const addButton = getByText('Add Todo');
@@ -33,7 +33,7 @@ describe('TodoList component', () => {
   });
  
  // Test for toggling between completed and not completed
-  it('toggles between completed and not completed', () => {
+  test('toggles between completed and not completed', () => {
     const { getByLabelText, getByText } = render(<TodoList />);
     const checkbox = getByLabelText('Buy milk');
     const todoText = getByText('Buy milk');
@@ -48,7 +48,7 @@ describe('TodoList component', () => {
   });
 
  // Test for deleting a todo item
-  it('deletes a todo item', () => {
+  test('deletes a todo item', () => {
     const { getByText, queryByText } = render(<TodoList />);
     const deleteButton = getByText('Delete');
     fireEvent.click(deleteButton);
@@ -56,7 +56,7 @@ describe('TodoList component', () => {
   });
 
   // Test to show that the correct number of todo items is rendered
-  it('renders the correct number of todo items', () => {
+  test('renders the correct number of todo items', () => {
     const { getAllByRole } = render(<TodoList />);
     const todoItems = getAllByRole('listitem');
     expect(todoItems).toHaveLength(3);
