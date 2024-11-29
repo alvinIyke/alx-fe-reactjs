@@ -18,7 +18,6 @@ const App = () => {
       prevTodos.map((todo) =>
         (link unavailable) === id ? { ...todo, completed: !todo.completed } : todo
       )
-    );
   };
 
   const handleAdd = (text) => {
