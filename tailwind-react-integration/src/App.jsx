@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import UserProfile from './components/UserProfile';
 import './index.css';
 import './App.css';
