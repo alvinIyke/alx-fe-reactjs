@@ -6,15 +6,14 @@ import RecipeDetail from './components/RecipeDetail';
 
 function App() {
   return (
-    <>
-      <Router>
+    
+    <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/recipe/:id" element={<RecipeDetail />} />
       </Routes>
     </Router>
-       
-    </>
+    
   )
 }
 
