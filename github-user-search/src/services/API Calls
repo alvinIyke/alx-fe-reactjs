@@ -1,1 +1,13 @@
 process.env.REACT_APP_GITHUB_API_KEY
+import githubService from '../services/githubService';
+
+const fetchUserData = async (searchTerm) => {
+  try {
+    const userData = await githubService.getUser(searchTerm);
+    return userData;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export default fetchUserData;
