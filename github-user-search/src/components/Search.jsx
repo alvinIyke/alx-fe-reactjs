@@ -39,7 +39,7 @@ function Search() {
       {isLoading ? (
         <p>Loading...</p>
       ) : error ? (
-        <p style={{ color: 'red' }}>Looks like we can't find the user.</p>
+        <p style={{ color: 'red' }}>Looks like we cant find the user.</p>
       ) : userData ? (
         <div>
           <h2>User Information</h2>
