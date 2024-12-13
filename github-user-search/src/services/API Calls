@@ -1,13 +1,28 @@
-process.env.REACT_APP_GITHUB_API_KEY
+import axios from 'axios';
 import githubService from '../services/githubService';
 
-const fetchUserData = async (searchTerm) => {
-  try {
-    const userData = await githubService.getUser(searchTerm);
-    return userData;
-  } catch (error) {
-    throw error;
-  }
+const GITHUB_API_URL = '(https://api.github.com/users/{username})';
+
+const githubService = {
+  async getUser(username) {
+    try {
+      const response = await axios.get(`${GITHUB_API_URL}/users/${username}`);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  },
+
+  async getRepos(username) {
+    try {
+      const response = await axios.get(`${GITHUB_API_URL}/users/${username}/repos`);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  },
 };
 
-export default fetchUserData;
+export default githubService;
+
+
