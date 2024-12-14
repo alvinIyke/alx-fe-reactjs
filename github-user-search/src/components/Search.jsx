@@ -24,22 +24,32 @@ function Search() {
       setIsLoading(false);
     }
   };
+ 
+  const userFields = [
+    { label: 'GitHub Username:', name: 'searchTerm', value: searchTerm, onChange: setSearchTerm },
+    { label: 'Location:', name: 'location', value: location, onChange: setLocation },
+    { label: 'Minimum Repositories:', name: 'minRepos', value: minRepos, onChange: setMinRepos },
+  ];
 
   return (
     <div className="max-w-md mx-auto p-4 bg-white rounded-lg shadow-md">
       <h2 className="text-lg font-bold mb-4">Search for GitHub Users</h2>
       <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
-        <div className="flex flex-col space-y-2">
-          <label htmlFor="search-term" className="text-sm font-medium">GitHub Username:</label>
-          <input
-            type="text"
-            id="search-term"
-            value={searchTerm}
-            onChange={(event) => setSearchTerm(event.target.value)}
-            placeholder="github-username"
-            className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
-          />
+      {userFields.map((field) => (
+          <div key={field.name} className="flex flex-col space-y-2">
+            <label htmlFor={field.name} className="text-sm font-medium">
+              {field.label}
+            </label>
+            <input
+              type={field.name === 'minRepos' ? 'number' : 'text'}
+              id={field.name}
+              value={field.value}
+              onChange={(event) => field.onChange(event.target.value)}
+              placeholder={field.name === 'minRepos' ? '10' : ''}
+              className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
+            />
         </div>
+        ))}
         <div className="flex flex-col space-y-2">
           <label htmlFor="location" className="text-sm font-medium">Location:</label>
           <input
@@ -70,9 +80,9 @@ function Search() {
       </form>
       {isLoading ? (
         <p>Loading...</p>
-      ) : error ? (
+      ) : error && (
         <p className="text-red-500 text-sm mt-4">Looks like we cant find the user.</p>
-      ) : userData ? (
+      ) }: userData && (
         <div className="mt-4">
           <h2 className="text-lg font-bold">User Information</h2>
           <img src={userData.avatar_url} alt={userData.name} width="100" height="100" className="rounded-lg"/>
@@ -83,7 +93,7 @@ function Search() {
             </a>
           </h3>
         </div>
-      ) : null}
+      ) : null
     </div>
   );
 }
