@@ -35,7 +35,7 @@ function Search() {
     <div className="max-w-md mx-auto p-4 bg-white rounded-lg shadow-md">
       <h2 className="text-lg font-bold mb-4">Search for GitHub Users</h2>
       <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
-      {userFields.map((field) => (
+      {userFields.map((field) => (  //rendering form fields based on the userFields array with map method
           <div key={field.name} className="flex flex-col space-y-2">
             <label htmlFor={field.name} className="text-sm font-medium">
               {field.label}
