@@ -50,28 +50,7 @@ function Search() {
             />
         </div>
         ))}
-        <div className="flex flex-col space-y-2">
-          <label htmlFor="location" className="text-sm font-medium">Location:</label>
-          <input
-            type="text"
-            id="location"
-            value={location}
-            onChange={(event) => setLocation(event.target.value)}
-            placeholder="city, country"
-            className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
-          />
-        </div>
-        <div className="flex flex-col space-y-2">
-          <label htmlFor="min-repos" className="text-sm font-medium">Minimum Repositories:</label>
-          <input
-            type="number"
-            id="min-repos"
-            value={minRepos}
-            onChange={(event) => setMinRepos(event.target.value)}
-            placeholder="10"
-            className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
-          />
-        </div>
+        
         <button 
         type="submit"
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
