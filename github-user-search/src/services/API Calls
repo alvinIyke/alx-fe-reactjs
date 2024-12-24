@@ -1,5 +1,4 @@
 import axios from 'axios';
-import githubService from '../services/githubService';
 
 const GITHUB_API_URL = '(https://api.github.com/users/{username})';
 
